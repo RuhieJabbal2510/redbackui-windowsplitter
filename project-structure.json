@@ -231,6 +231,10 @@
 			{
 				"name": "vite.config",
 				"extension": ["ts"]
+			},
+			{
+				"name": "pull_request_template",
+				"extension": ["md"]
 			}
         ]
     }
