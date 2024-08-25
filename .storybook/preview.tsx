@@ -4,6 +4,7 @@ import type { Preview } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, Unstyled } from '@storybook/blocks';
 import { RedbackUiThemeProvider } from '../src/providers/RedbackUiThemeProvider/RedbackUiThemeProvider';
 import { themes } from '../src/themes';
+import { WithA11yTests, WithTheme } from './decorators';
 
 const preview: Preview = {
 	globalTypes: {
@@ -19,17 +20,26 @@ const preview: Preview = {
 		},
 	},
 	decorators: [
-		(Story, context) => {
-			return (
-				<RedbackUiThemeProvider theme={themes[context.globals.theme]}>
-					<Story />
-				</RedbackUiThemeProvider>
-			);
-		}
+		WithTheme,
+		WithA11yTests,
 	],
 	parameters: {
 		layout: 'centered',
 		backgrounds: { disable: true },
+		a11y: {
+			element: '#storybook-root',
+			// axe-core configurationOptions (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#parameters-1)
+			config: {
+				// Rules to specifically turn on/off (these are not the only rules that will run, many are by default or associated with the tags in `options`)
+				// https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md
+				rules: [
+					{ id: 'color-contrast', enabled: true },
+				],
+			},
+			// axe-core optionsParameter (https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter)
+			options: {
+			},
+		},
 		options: {
 			storySort: (a, b) => {
 				const pageOrder = ['About', 'Usage', 'Contributing'];
@@ -76,6 +86,8 @@ const preview: Preview = {
 			),
 		},
 	},
+
+	tags: ['autodocs']
 };
 
 export default preview;
