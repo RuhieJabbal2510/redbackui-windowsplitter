@@ -20,3 +20,4 @@ export const renderWithDeps = (component: ReactNode) => {
 			</RedbackUiThemeProvider>
 		</DiProvider>);
 };
+
