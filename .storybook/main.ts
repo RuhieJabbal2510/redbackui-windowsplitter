@@ -41,6 +41,7 @@ const config: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-docs',
 		'@storybook/addon-a11y',
+		'@storybook/addon-actions',
 		'storybook-dark-mode',
 		'@storybook/addon-mdx-gfm'
 	],
