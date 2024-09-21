@@ -11,7 +11,8 @@
     "lint:structure": "eslint --parser ./node_modules/eslint-plugin-project-structure/dist/parser.js --rule project-structure/file-structure:error --ext .js,.jsx,.ts,.tsx,.html,.css,.svg,.png,.jpg,.json,.md .",
     "test:unit": "jest ./src/components/**/*.test.tsx --coverage",
     "storybook": "storybook dev --port 6006",
-    "build": "storybook build",
+    "build:storybook": "storybook build",
+    "build": "tsc -p tsconfig.dist.json",
     "preview": "npx http-server ./storybook-static",
     "package": "tsc -p tsconfig.dist.json"
   },
@@ -70,6 +71,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-magnetic-di": "^3.1.3",
+    "semantic-release": "^24.1.1",
     "storybook": "^8.2.9",
     "storybook-dark-mode": "^4.0.2",
     "typescript": "^5.2.2",
