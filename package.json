@@ -1,5 +1,10 @@
 {
-  "name": "redback-ui",
+  "name": "@redbackops/redback-ui",
+  "homepage": "https://redback-operations.github.io/redback-ui/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Redback-Operations/redback-ui"
+  },
   "version": "0.0.1",
   "type": "module",
   "license": "MIT",
