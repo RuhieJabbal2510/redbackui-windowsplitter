@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npm run build
+      - run: npm run package
 
   release:
     needs: build
