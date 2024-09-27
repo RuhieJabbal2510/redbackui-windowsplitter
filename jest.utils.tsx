@@ -1,4 +1,4 @@
-import { DiProvider, injectable } from 'react-magnetic-di';
+import { DiProvider, Injectable, injectable } from 'react-magnetic-di';
 import { ThemeProvider } from 'styled-components';
 import { ReactNode } from 'react';
 import { themes } from './src';
@@ -12,11 +12,13 @@ const commonDeps = [
 ];
 
 
-export const renderWithDeps = (component: ReactNode) => {
+export const renderWithDeps = (component: ReactNode, deps: Injectable[] = []) => {
 	return render(
-		<DiProvider use={commonDeps}>
+		<DiProvider use={[...commonDeps, ...deps]}>
 			<RedbackUiThemeProvider theme={themes.default}>
 				{component}
 			</RedbackUiThemeProvider>
-		</DiProvider>);
+		</DiProvider>
+	);
 };
+

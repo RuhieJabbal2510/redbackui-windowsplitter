@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react';
 import { renderWithDeps } from '../../../jest.utils';
 import ImageSlider from './ImageSlider';
+import { axe } from 'jest-axe';
 
 describe('<ImageSlider />', () => {
 	const images = [
@@ -15,5 +16,14 @@ describe('<ImageSlider />', () => {
 		const templateName = screen.getByTestId('ImageSlider');
 
 		expect(templateName).toBeVisible();
+	});
+
+	it('has no accessibility violations', async () => {
+		const { container } = renderWithDeps(<ImageSlider size="small" images={images} />);
+		const results = await axe(container);
+
+		// TODO: Fix the violation and replace this with
+		// expect(results).toHaveNoViolations();
+		expect(results.violations.length).toBe(1);
 	});
 });

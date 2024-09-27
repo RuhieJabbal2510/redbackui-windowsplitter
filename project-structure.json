@@ -161,6 +161,10 @@
 				"children": []
 			},
 			{
+				"name": ".eslintrc.base",
+				"extension": ["json"]
+			},
+			{
 				"name": ".eslintrc",
 				"extension": ["json"]
 			},
@@ -231,6 +235,10 @@
 			{
 				"name": "vite.config",
 				"extension": ["ts"]
+			},
+			{
+				"name": "pull_request_template",
+				"extension": ["md"]
 			}
         ]
     }

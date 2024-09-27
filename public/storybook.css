@@ -37,7 +37,7 @@ body {
 	font-family: 'Inter Tight', sans-serif;
 }
 
-.sb-bar {
+.sb-bar[data-test-id="sb-preview-toolbar"] {
 	position: fixed !important;
 	top: 0;
 	left: 0;
