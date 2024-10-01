@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/Redback-Operations/redback-ui"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "license": "MIT",
   "exports": "./dist/index.js",
